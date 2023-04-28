@@ -1,0 +1,35 @@
+If you have used any modern website, then chances are you have interacted with a website that uses REST. 
+Even YouTube uses RESTful URLs on its site, but what exactly is REST? For starters, REST stands for Representation State Transfer and is just a fancy way of saying that a server responds to create, read, update, and delete requests in a standard way.
+The idea behind REST is to treat all server URLs as access points for the various resources on the server. For example in this URL, http://example.com/users, users represents the resource that the server is exposing. As mentioned earlier, REST needs a way to create, read, update, and delete these resources and it does so with the following five URLs.
+http://example.com/users
+http://example.com/users
+http://example.com/users/1
+http://example.com/users/1
+http://example.com/users/1
+
+The first two URLs do not have an ID so they act on the entire user's resource, while the last three URLs do have an ID in their URL and thus act on only a single user resource, but as you may notice there are only two distinct URLs. That is because REST uses the four basic HTTP actions, GET, POST, PUT, and DELETE to determine what to do with each URL. If we add in those actions to the URLs it is much easier to see what each of the URLs do.
+[GET]     http://example.com/users
+[POST]    http://example.com/users
+[GET]     http://example.com/users/1
+[PUT]     http://example.com/users/1
+[DELETE]  http://example.com/users/1
+
+The first URL we have is the GET users URL, and it is used to get a list of all users. In REST when a GET URL does not have an ID it acts upon the entire resource and will always return a list of every item in that resource. The GET action in REST corresponds with reading data.
+
+The second URL, which is almost identical to the first, is used to create a new user. In REST the POST action corresponds with creation, and should always be used on the entire resource by not using an ID in the URL.
+
+The third URL is another GET URL, but this URL is for getting only a single user based on the id that is in the URL. The ID portion of the URL is used by REST to determine which resource from the collection of resources it should act upon. In the case of this URL it is used to return the user with that ID.
+
+The fourth URL is the most confusing of them all, but it is used to update a user with the given ID. The PUT action in REST corresponds with update and works very similarly to POST, but instead of creating a new resource it updates an existing resource.
+
+Lastly, we have the most straight forward URL of them all which is for deleting a user with a specific ID. The DELETE action in REST does exactly what you would think and deletes the resource with the given ID.
+
+
+In order for a website to use REST, the URLs do not need to be formatted exactly the same as above. For example using these URLs would still be considered RESTful, but most applications will use the previously mentioned URLs.
+[GET]     http://example.com/users
+[POST]    http://example.com/users
+[GET]     http://example.com/users/details/1
+[PUT]     http://example.com/users/update/1
+[DELETE]  http://example.com/users/delete/1
+
+The only thing that matters with REST is that the URLs used represent a resource, in this case a user, and that they support creating, reading, updating, and deleting from that resource using the HTTP actions GET, POST, PUT, and DELETE.
