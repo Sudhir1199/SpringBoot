@@ -1,0 +1,55 @@
+"@SpringBootApplication" is a Spring Boot Annotataion used to indicate that a class is
+the main class of a spring Boot application. It is a combination of 3 annotation:
+'@Configuration' + '@EnableAutoConfiguration' + '@ComponentScan'.
+
+1)@Configuration :- It is an annotation which is used to indiacate that a class 
+defines one or more Spring Beans. It is used to create Beans manually and customize 
+their configuration, rather than using auto-configuration provided by spring Boot
+
+- When a class is annotated with '@Configuration', Spring treats it as a source of
+bean defination, similar to an XML-based configuration where we define bean in XML.
+
+Example 
+
+
+package com.Annotations.Spring_Annotations;
+
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+
+@Configuration
+public class MyConfig {
+	
+	@Bean
+	public Student getStudent() { 
+		return new Student();
+	}
+
+}
+
+Student class define below:-
+public class Student {
+	public void study() {
+		System.out.println("StudyinG!!");
+	}
+
+}
+
+
+-In above example, the 'MyConfig' class is annoted with '@Configuration',
+which indicates that it contains bean definations. 
+The 'getStudent()' method is annotated with '@Bean', indicating that
+it returns a bean to be managed by Spring
+
+***Note:- 
+By using 'Configuration'and other annotation, developers can create
+complex and customized bean configurations, while taking advantage of Spring's
+DEPENDENCY INJECTION and  IOC(Inversion of Control) feature.
+
+
+
+
+
+
+
+
